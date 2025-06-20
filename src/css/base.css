@@ -33,7 +33,6 @@ main:has(.back-link) {
 /* HTML: <div class="loader"></div> */
 .loader {
   width: 4px;
-  display: none;
   margin: 24px auto;
   color: #000;
   aspect-ratio: 1;
@@ -102,7 +101,7 @@ main:has(.back-link) {
 .form input[type='text']:focus {
   border-color: #007bff;
 }
-form button {
+.btn {
   padding: 10px 20px;
   font-size: 16px;
   background-color: #007bff;
@@ -113,8 +112,12 @@ form button {
   transition: background-color 0.3s;
 }
 
-.form button:hover {
+.btn:hover {
   background-color: #0056b3;
+}
+.load-button {
+  margin: 24px auto;
+  display: block;
 }
 .gallery {
   display: flex;
@@ -128,29 +131,38 @@ form button {
 }
 
 .gallery-item {
-  max-width: calc((100% - 20px) / 6);
+  max-width: calc((100% - 10px) / 6);
+  height: 240px;
   background-color: white;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
   transition: transform 0.4s;
-  height: 250px;
- }
+}
 
 .gallery-item:hover {
   scale: 1.02;
 }
-.gallery-item img{
+.gallery-item img {
+  width: 300px;
+  height: 150px;
   object-fit: cover;
+  display: block;
 }
 .info {
   padding: 8px;
+  font-size: 12px;
+  line-height: 1.4;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: center;
-  align-items: flex-end;
-  gap: 4px;
-  font-size: 14px;
-  color: #444;
-  letter-spacing: 1.7;
+}
+
+.info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.hidden {
+  display: none;
 }
